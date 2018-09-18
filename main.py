@@ -88,6 +88,9 @@ def drawDisplay():
     printMap()
 
 def testscript():
+    """
+    A chunk of prescripted sequences used for testing new methods
+    """
     initMap(8,8)
     drawDisplay()
     enterprise.move(5, 4)
@@ -96,6 +99,11 @@ def testscript():
     print(enterprise.shields)
 
 def gameLoop():
+    """
+    INCOMPLETE: the main interactive loop
+    """
+    #TODO: Move prompt into own function
+    #TODO: Write code to control Klingon behavior
     drawDisplay()
     prompt = input("Enter your command, Captain. (MOVE or ATTACK)")
     if prompt == "MOVE":
