@@ -31,7 +31,7 @@ class starship():
         """
         Method that allows a ship to move along the map
         """
-        map[enterprise.coordX-1][enterprise.coordY-1] = "."
+        map[enterprise.coordX-1][enterprise.coordY-1] = "." #prevents the Picard Maneuver
         map[klingon.coordX-1][klingon.coordY-1] = "."
         self.coordX = newX
         self.coordY = newY
@@ -39,12 +39,22 @@ class starship():
 
     def phaser_attack(self, target, strength):
         """
-        Attack an opposing starship using, depleting its shields or hull
+        Attack an opposing starship using, depleting its shields or hull.
+        In the current implementation, the phaser strike weakens as a direct
+        function of the distance of the shot.
         """
-        intensity = strength - sqrt((self.coordX - target.coordX)**2 + (self.coordY - target.coordY)**2)
-        self.phaser = self.phaser - intensity
-        target.shields = target.shields - intensity
-        print(self.name + " attacks "  + target.name + " for " +  str(intensity) + " damage.")
+        phaser_intensity = strength - sqrt((self.coordX - target.coordX)**2 + (self.coordY - target.coordY)**2)
+        self.phaser = self.phaser - phaser_intensity
+        target.shields = target.shields - phaser_intensity
+        print(self.name + " attacks "  + target.name + " for " +  str(phaser_intensity) + " damage.")
+
+    def photon_attack(self, target, torp_count):
+        """
+        Photon torpedo attack; damage varies based on number of torpedos used.
+        """
+        photon_intensity = 8 + 2 * torp_count
+        self.photons = self.photons - torp_count
+        target.hull = target.hull - photon_intensity
 
 #let's make an example starship
 enterprise = starship("enterprise", 100, 100, 100, 100, 3, 3)
