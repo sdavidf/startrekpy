@@ -1,6 +1,6 @@
 #Startrek.py
 #A conversion of the old mainframe grid-based space game
-#sdf, (c) 2018
+#sdf, 2018
 
 #imports as needed
 from math import sqrt
@@ -9,8 +9,6 @@ import random
 
 #right now the map is a global, might change later
 map = []
-
-
 
 #let's make an example starship
 enterprise = starship("enterprise", 100, 100, 100, 100, 3, 3)

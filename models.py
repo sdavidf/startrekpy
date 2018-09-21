@@ -1,3 +1,7 @@
+#models.py
+#Starship models for StarTrekPy
+#sdf, 2018
+
 #imports as needed
 from math import sqrt
 import random
