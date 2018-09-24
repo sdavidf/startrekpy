@@ -8,3 +8,5 @@ def initMap(xsize, ysize):
         map.append([])
         for j in range(ysize):
             map[i].append(".")
+
+initMap(8,8)
